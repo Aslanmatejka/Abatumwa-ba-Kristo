@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate - Abatumwa ba Kristo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">❤️</div>
+                <h1>Abatumwa ba Kristo</h1>
+            </div>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="donate.html" class="active" style="background: #f39c12; border-radius: 25px;">Donate</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="menuToggle">☰</button>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="hero" style="padding: 5rem 2rem 4rem;">
+        <div class="hero-content">
+            <h2 style="font-size: 3rem;">Make a Difference Today</h2>
+            <p>Your generosity transforms lives and builds stronger communities</p>
+        </div>
+    </section>
+
+    <!-- Why Donate Section -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Your Donation Matters</h2>
+                <p>Every contribution creates real, measurable impact</p>
+            </div>
+            <div class="card-grid">
+                <div class="card" style="text-align: center;">
+                    <div class="card-icon" style="margin: 0 auto 1.5rem;">🎓</div>
+                    <h3>$50</h3>
+                    <p>Provides school supplies for 5 children for an entire year</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div class="card-icon" style="margin: 0 auto 1.5rem;">💉</div>
+                    <h3>$100</h3>
+                    <p>Covers medical treatment for 10 patients at our mobile clinics</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div class="card-icon" style="margin: 0 auto 1.5rem;">💧</div>
+                    <h3>$250</h3>
+                    <p>Installs a water filtration system for a village family</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div class="card-icon" style="margin: 0 auto 1.5rem;">🌳</div>
+                    <h3>$500</h3>
+                    <p>Plants 100 trees and supports environmental conservation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Options Section -->
+    <section class="section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2>Choose Your Donation Amount</h2>
+                <p>Select a giving level that works for you</p>
+            </div>
+            <div class="donation-options">
+                <div class="donation-card">
+                    <h3>Friend</h3>
+                    <div class="donation-amount">$25</div>
+                    <p style="margin-bottom: 1.5rem;">Support our ongoing programs with a one-time contribution</p>
+                    <ul>
+                        <li>Quarterly newsletter updates</li>
+                        <li>Recognition on our website</li>
+                        <li>Tax-deductible receipt</li>
+                    </ul>
+                    <button class="btn btn-primary" style="width: 100%; margin-top: 1.5rem;" onclick="handleDonation(25)">Donate $25</button>
+                </div>
+                <div class="donation-card featured">
+                    <h3>Supporter</h3>
+                    <div class="donation-amount">$100</div>
+                    <p style="margin-bottom: 1.5rem;">Make a significant impact on our community programs</p>
+                    <ul>
+                        <li>Monthly email updates</li>
+                        <li>Exclusive impact reports</li>
+                        <li>Featured donor recognition</li>
+                        <li>Invitation to annual events</li>
+                    </ul>
+                    <button class="btn btn-success" style="width: 100%; margin-top: 1.5rem;" onclick="handleDonation(100)">Donate $100</button>
+                </div>
+                <div class="donation-card">
+                    <h3>Champion</h3>
+                    <div class="donation-amount">$500</div>
+                    <p style="margin-bottom: 1.5rem;">Become a champion for change in our communities</p>
+                    <ul>
+                        <li>All Supporter benefits</li>
+                        <li>Personalized impact stories</li>
+                        <li>VIP event access</li>
+                        <li>Meet our team & beneficiaries</li>
+                        <li>Custom recognition options</li>
+                    </ul>
+                    <button class="btn btn-primary" style="width: 100%; margin-top: 1.5rem;" onclick="handleDonation(500)">Donate $500</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Donation Section -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <h2>Custom Donation</h2>
+                <p>Choose your own donation amount</p>
+            </div>
+            <div class="form-container" style="max-width: 600px;">
+                <form id="donationForm">
+                    <div class="form-group">
+                        <label for="donationType">Donation Type *</label>
+                        <select id="donationType" name="donationType" required>
+                            <option value="">Select donation type</option>
+                            <option value="one-time">One-Time Donation</option>
+                            <option value="monthly">Monthly Recurring</option>
+                            <option value="annual">Annual Donation</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">Donation Amount ($) *</label>
+                        <input type="number" id="amount" name="amount" min="5" required placeholder="Enter amount">
+                    </div>
+                    <div class="form-group">
+                        <label for="donorName">Full Name *</label>
+                        <input type="text" id="donorName" name="donorName" required placeholder="Enter your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="donorEmail">Email Address *</label>
+                        <input type="email" id="donorEmail" name="donorEmail" required placeholder="your.email@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="donorPhone">Phone Number</label>
+                        <input type="tel" id="donorPhone" name="donorPhone" placeholder="+1 (234) 567-8900">
+                    </div>
+                    <div class="form-group">
+                        <label for="designation">Designate Your Donation (Optional)</label>
+                        <select id="designation" name="designation">
+                            <option value="general">General Fund (Where Most Needed)</option>
+                            <option value="education">Education Programs</option>
+                            <option value="healthcare">Healthcare Initiatives</option>
+                            <option value="water">Clean Water Projects</option>
+                            <option value="women">Women Empowerment</option>
+                            <option value="environment">Environmental Programs</option>
+                            <option value="hunger">Hunger Relief</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message (Optional)</label>
+                        <textarea id="message" name="message" placeholder="Share why you're supporting our cause..." rows="3"></textarea>
+                    </div>
+                    <div class="form-group" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <input type="checkbox" id="anonymous" name="anonymous" style="width: auto;">
+                        <label for="anonymous" style="margin: 0;">Make my donation anonymous</label>
+                    </div>
+                    <button type="submit" class="btn btn-success" style="width: 100%;">Proceed to Payment</button>
+                </form>
+                <p id="donationMessage" style="margin-top: 1rem; display: none; text-align: center; font-weight: 600;"></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Other Ways to Give -->
+    <section class="section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2>Other Ways to Give</h2>
+                <p>Multiple options to support our mission</p>
+            </div>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-icon">🏦</div>
+                    <h3>Bank Transfer</h3>
+                    <p style="margin-bottom: 1rem;">
+                        Transfer funds directly to our bank account for larger donations.
+                    </p>
+                    <p style="font-size: 0.9rem; color: #666;">
+                        <strong>Bank:</strong> First National Bank<br>
+                        <strong>Account:</strong> Abatumwa ba Kristo<br>
+                        <strong>Account #:</strong> 1234567890<br>
+                        <strong>Routing #:</strong> 987654321
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📦</div>
+                    <h3>In-Kind Donations</h3>
+                    <p style="margin-bottom: 1rem;">
+                        Donate goods, supplies, or services that support our programs.
+                    </p>
+                    <a href="contact.html" class="btn btn-primary">Contact Us</a>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🎁</div>
+                    <h3>Legacy Giving</h3>
+                    <p style="margin-bottom: 1rem;">
+                        Include Abatumwa ba Kristo in your will or estate planning for lasting impact.
+                    </p>
+                    <a href="contact.html" class="btn btn-primary">Learn More</a>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🏢</div>
+                    <h3>Corporate Partnerships</h3>
+                    <p style="margin-bottom: 1rem;">
+                        Partner with us through CSR programs and employee giving initiatives.
+                    </p>
+                    <a href="contact.html" class="btn btn-primary">Partner With Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tax Information -->
+    <section>
+        <div class="container" style="text-align: center;">
+            <div class="card" style="max-width: 800px; margin: 0 auto;">
+                <h3 style="color: #667eea; margin-bottom: 1rem;">💡 Tax Deductible Information</h3>
+                <p style="font-size: 1.05rem; line-height: 1.8; color: #666;">
+                    Abatumwa ba Kristo is a registered 501(c)(3) nonprofit organization. All donations are tax-deductible to 
+                    the fullest extent allowed by law. Tax ID: 12-3456789. You will receive a receipt for your 
+                    donation via email for your tax records. Please consult with your tax advisor for specific 
+                    tax implications of your donation.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transparency Section -->
+    <section class="section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Commitment to Transparency</h2>
+                <p>See exactly how your donations are used</p>
+            </div>
+            <div style="max-width: 900px; margin: 0 auto;">
+                <div class="card" style="text-align: center; padding: 3rem 2rem;">
+                    <h3 style="margin-bottom: 2rem;">How We Use Your Donations</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+                        <div>
+                            <div style="font-size: 2.5rem; color: #667eea; font-weight: 700;">85%</div>
+                            <p style="font-weight: 600; margin-top: 0.5rem;">Program Services</p>
+                            <p style="color: #666; font-size: 0.9rem;">Direct community impact</p>
+                        </div>
+                        <div>
+                            <div style="font-size: 2.5rem; color: #f5576c; font-weight: 700;">10%</div>
+                            <p style="font-weight: 600; margin-top: 0.5rem;">Fundraising</p>
+                            <p style="color: #666; font-size: 0.9rem;">Donor engagement</p>
+                        </div>
+                        <div>
+                            <div style="font-size: 2.5rem; color: #00f2fe; font-weight: 700;">5%</div>
+                            <p style="font-weight: 600; margin-top: 0.5rem;">Administration</p>
+                            <p style="color: #666; font-size: 0.9rem;">Operational efficiency</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/16102095929" class="whatsapp-float" target="_blank" title="Contact us on WhatsApp">
+        💬
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Abatumwa ba Kristo</h3>
+                <p>A USA-based church missionary organization serving communities in Uganda through evangelism, education, healthcare, and sustainable development in Christ's name.</p>
+                <div class="social-links">
+                    <a href="#" title="Facebook">📘</a>
+                    <a href="#" title="Twitter">🐦</a>
+                    <a href="#" title="Instagram">📷</a>
+                    <a href="#" title="LinkedIn">💼</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="projects.html">Our Projects</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Get Involved</h3>
+                <ul>
+                    <li><a href="donate.html">Donate</a></li>
+                    <li><a href="contact.html">Volunteer</a></li>
+                    <li><a href="contact.html">Partner With Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Events</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li>📍 USA Office: 281 Griffen St</li>
+                    <li>🇺🇬 Uganda Mission: Mpigi District, Mbale</li>
+                    <li>📞 +1 (234) 567-8900</li>
+                    <li>✉️ info@abatumwabakristo.org</li>
+                    <li>🕐 Mon-Fri: 9AM - 6PM EST</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Abatumwa ba Kristo. All rights reserved. | Built with ❤️ for a better world</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
